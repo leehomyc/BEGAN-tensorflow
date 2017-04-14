@@ -25,7 +25,7 @@ def main(config):
         batch_size = config.sample_per_image
         do_shuffle = False
 
-<<<<<<< HEAD
+
     data_loader = get_loader(data_path, config.batch_size, config.input_scale_size,
                              config.data_format, config.split)
 
@@ -38,20 +38,7 @@ def main(config):
  #       if not config.load_path:
  #           raise Exception("[!] You should specify `load_path` to load a pretrained model")
  #       trainer.test()
-=======
-    data_loader = get_loader(
-            data_path, config.batch_size, config.input_scale_size,
-            config.data_format, config.split)
-    trainer = Trainer(config, data_loader)
 
-    if config.is_train:
-        save_config(config)
-        trainer.train()
-    else:
-        if not config.load_path:
-            raise Exception("[!] You should specify `load_path` to load a pretrained model")
-        trainer.test()
->>>>>>> 006741ecc686a1bd80a47500de95209b5f0bc288
 
 if __name__ == "__main__":
     config, unparsed = get_config()
