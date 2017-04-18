@@ -5,7 +5,7 @@ slim = tf.contrib.slim
 def GeneratorCNN(z, hidden_num, output_num, repeat_num, data_format, reuse):
     with tf.variable_scope("G", reuse=reuse) as vs:
         print(hidden_num)
-        x = slim.fully_connected(z, np.prod([8, 8, hidden_num]), activation_fn=None)
+        x = slim.fully_connected(z, np.prod([8, 8, hidden_num]).item(), activation_fn=None)
         x = reshape(x, 8, 8, hidden_num, data_format)
         
         for idx in range(repeat_num):
